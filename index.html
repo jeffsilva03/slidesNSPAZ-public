@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides - Paróquia Nossa Senhora da Paz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root{--primary:#79493D;--primary-dark:#5C362C;--primary-light:#9B6B5D;--primary-pale:#D4B8B0;--gold:#C9A860;--gold-dark:#A88940;--gold-light:#E8D4A8;--cream:#FDF8F3;--cream-dark:#F5EDE4;--white:#FFFFFF;--dark:#2C2420;--dark-soft:#4A3F3A;--gray:#8B7B73;--gray-light:#C4B8B0;--font-display:'Playfair Display',serif;--font-heading:'Cormorant Garamond',serif;--font-body:'Montserrat',sans-serif;--shadow-sm:0 2px 8px rgba(121,73,61,.08);--shadow-md:0 8px 24px rgba(121,73,61,.12);--shadow-lg:0 16px 48px rgba(121,73,61,.16);--radius-sm:8px;--radius-md:16px;--radius-lg:24px}
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        body{font-family:var(--font-body);color:var(--dark);line-height:1.6;background:var(--cream);min-height:100vh}
+        .page-header{background:linear-gradient(135deg,var(--dark) 0%,var(--primary-dark) 100%);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+        .header-left{display:flex;align-items:center;gap:1rem}.header-left img{height:42px;opacity:.95}
+        .header-divider{width:1px;height:26px;background:rgba(255,255,255,.18)}
+        .header-title{font-family:var(--font-heading);color:var(--gold-light);font-size:1.35rem;font-weight:500;letter-spacing:.5px}
+        .header-back{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.65);font-size:.82rem;text-decoration:none;padding:.45rem 1rem;border-radius:100px;border:1px solid rgba(255,255,255,.12);transition:all .3s}
+        .header-back:hover{color:#fff;border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.05)}
+        .hero-banner{position:relative;padding:5rem 2rem 4.5rem;text-align:center;overflow:hidden;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+        .hero-bg{position:absolute;inset:0;background:url('assets/images/igrejas.png') center/cover no-repeat;z-index:0}
+        .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(44,36,32,.88),rgba(92,54,44,.82),rgba(44,36,32,.9));z-index:1}
+        .hero-overlay::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 2L20 38M2 20L38 20' stroke='%23C9A860' stroke-width='.3' opacity='.08'/%3E%3C/svg%3E")}
+        .hero-content{position:relative;z-index:2;max-width:600px}
+        .hero-icon{font-size:2rem;color:var(--gold);margin-bottom:.75rem;opacity:.7}
+        .hero-banner h1{font-family:var(--font-display);font-size:2.6rem;color:#fff;font-weight:600;margin-bottom:.5rem;letter-spacing:.5px}
+        .hero-banner h1 span{color:var(--gold-light)}
+        .hero-banner p{color:var(--primary-pale);font-size:1rem;font-weight:300;opacity:.9}
+        .hero-line{display:flex;align-items:center;gap:.75rem;justify-content:center;margin-top:1.25rem}
+        .hero-line span{width:40px;height:1.5px;background:var(--gold);opacity:.5;border-radius:2px}
+        .hero-line i{color:var(--gold);font-size:.6rem;opacity:.6}
+        .main-container{max-width:940px;margin:0 auto;padding:2rem 1.5rem 4rem}
+        .mass-type-tabs{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-md);padding:.75rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+        .mass-type-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:44px;border:1.5px solid transparent;border-radius:var(--radius-sm);background:transparent;color:var(--gray);font-family:var(--font-body);font-size:.85rem;font-weight:700;cursor:pointer;transition:all .2s}
+        .mass-type-btn:hover{border-color:var(--primary-pale);color:var(--primary)}
+        .mass-type-btn.selected{border-color:var(--gold);background:rgba(201,168,96,.1);color:var(--primary)}
+        .mass-type-btn i{color:var(--gold)}
+        .liturgia-import{background:linear-gradient(135deg,rgba(201,168,96,.11),rgba(121,73,61,.05));border:1px solid var(--gold-light);border-radius:var(--radius-md);padding:1.15rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm)}
+        .liturgia-import-title{display:flex;align-items:center;gap:.65rem;color:var(--dark);font-family:var(--font-heading);font-size:1.12rem;font-weight:700}
+        .liturgia-import-title i{color:var(--gold)}
+        .liturgia-import-description{color:var(--gray);font-size:.8rem;margin:.25rem 0 .85rem 1.65rem}
+        .liturgia-import-controls{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap}
+        .liturgia-date-input{padding:.62rem .8rem;border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);background:var(--white);color:var(--dark);font-family:var(--font-body);font-size:.88rem}
+        .liturgia-date-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(121,73,61,.08)}
+        .btn-import-liturgia{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.64rem 1rem;border:1.5px solid var(--primary);border-radius:100px;background:var(--primary);color:#fff;font-family:var(--font-body);font-size:.8rem;font-weight:700;cursor:pointer;transition:all .2s}
+        .btn-import-liturgia:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
+        .btn-import-liturgia:disabled{cursor:wait;opacity:.7}
+        .liturgia-import-status{min-height:1.2rem;margin-top:.7rem;color:var(--gray);font-size:.78rem}
+        .liturgia-import-status.success{color:#287c50}.liturgia-import-status.error{color:#b53a30}
+        .filename-section{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-md);padding:1.25rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+        .filename-section label{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--dark);white-space:nowrap;display:flex;align-items:center;gap:.5rem}
+        .filename-section label i{color:var(--gold);font-size:.95rem}
+        .filename-input-wrap{flex:1;min-width:200px;display:flex;align-items:center;border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);overflow:hidden;transition:border-color .2s}
+        .filename-input-wrap:focus-within{border-color:var(--primary);box-shadow:0 0 0 3px rgba(121,73,61,.08)}
+        .filename-input-wrap input{flex:1;padding:.65rem 1rem;border:none;outline:none;font-family:var(--font-body);font-size:.9rem;color:var(--dark);background:transparent}
+        .filename-input-wrap input::placeholder{color:var(--gray-light)}
+        .filename-ext{padding:.65rem .85rem;background:var(--cream);color:var(--gray);font-size:.85rem;font-weight:600;border-left:1px solid var(--cream-dark)}
+        .btn-clear-all{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.62rem 1rem;border:1.5px solid rgba(192,57,43,.3);border-radius:100px;background:transparent;color:#b53a30;font-family:var(--font-body);font-size:.8rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap}
+        .btn-clear-all:hover{background:rgba(192,57,43,.06);border-color:#b53a30}
+        .section-card{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-md);margin-bottom:.65rem;overflow:hidden;transition:all .3s;box-shadow:var(--shadow-sm)}
+        .section-card:hover{box-shadow:var(--shadow-md)}
+        .section-card.active{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold),var(--shadow-md)}
+        .section-header{display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.25rem;cursor:pointer;user-select:none;transition:background .2s}
+        .section-header:hover{background:var(--cream)}
+        .section-header-left{display:flex;align-items:center;gap:.7rem}
+        .section-num{width:26px;height:26px;border-radius:50%;background:var(--cream-dark);color:var(--gray);font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+        .section-card.active .section-num{background:var(--gold);color:#fff}
+        .section-header h3{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--dark)}
+        .section-badge{font-size:.65rem;font-weight:700;padding:.12rem .55rem;border-radius:100px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff;display:none;letter-spacing:.3px;text-transform:uppercase}
+        .section-badge.visible{display:inline-block}
+        .section-header-right{display:flex;align-items:center;gap:.7rem}
+        .toggle-icon{font-size:.7rem;color:var(--gray-light);transition:transform .3s}
+        .section-card.open .toggle-icon{transform:rotate(180deg)}
+        .section-body{display:none;padding:0 1.25rem 1.25rem;border-top:1px solid var(--cream-dark)}
+        .section-card.open .section-body{display:block;padding-top:1.15rem}
+        .input-type-selector{display:flex;gap:.45rem;margin-bottom:1.1rem}
+        .type-btn{flex:1;padding:.55rem .4rem;border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);background:transparent;color:var(--gray);cursor:pointer;font-family:var(--font-body);font-size:.78rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:.35rem;transition:all .2s}
+        .type-btn:hover{border-color:var(--primary-pale);color:var(--primary)}
+        .type-btn.selected{border-color:var(--primary);background:linear-gradient(135deg,rgba(121,73,61,.06),rgba(121,73,61,.02));color:var(--primary);font-weight:600}
+        .type-btn i{font-size:.8rem}
+        .quick-fill-row{display:flex;justify-content:flex-start;margin:-.55rem 0 1rem}
+        .quick-fill-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .85rem;border-radius:100px;border:1.5px solid var(--gold);background:rgba(201,168,96,.08);color:var(--primary);font-family:var(--font-body);font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s}
+        .quick-fill-btn:hover{background:var(--gold);color:#fff}
+        .input-area{display:none}.input-area.visible{display:block}
+        .file-drop{border:2px dashed var(--cream-dark);border-radius:var(--radius-sm);padding:1.5rem;text-align:center;cursor:pointer;position:relative;transition:all .2s}
+        .file-drop:hover,.file-drop.dragover{border-color:var(--gold);background:rgba(201,168,96,.04)}
+        .file-drop input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer}
+        .file-drop .drop-icon{font-size:1.6rem;color:var(--gray-light);margin-bottom:.4rem}
+        .file-drop p{color:var(--gray);font-size:.88rem}
+        .file-drop .formats{font-size:.72rem;color:var(--gray-light);margin-top:.2rem}
+        .file-name-display{display:none;align-items:center;gap:.5rem;padding:.55rem .9rem;background:rgba(201,168,96,.08);border:1px solid var(--gold-light);border-radius:var(--radius-sm);margin-top:.65rem;font-size:.82rem;color:var(--primary)}
+        .file-name-display.visible{display:flex}
+        .file-name-display i{color:var(--gold)}
+        .file-name-display .remove-file{margin-left:auto;cursor:pointer;color:var(--gray);transition:color .2s}
+        .file-name-display .remove-file:hover{color:#c0392b}
+        input[type="url"],textarea{width:100%;padding:.7rem .9rem;border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);background:var(--white);color:var(--dark);font-family:var(--font-body);font-size:.88rem;transition:border-color .2s}
+        input[type="url"]:focus,textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(121,73,61,.08)}
+        textarea{min-height:100px;resize:vertical;line-height:1.5}
+        .reading-extra-field{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--cream-dark)}
+        .reading-extra-field label{display:flex;align-items:center;gap:.45rem;margin-bottom:.45rem;font-size:.76rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}
+        .reading-extra-field label i{color:var(--gold)}
+        .reading-extra-field small{display:block;margin-top:.35rem;color:var(--gray);font-size:.72rem}
+        .reading-extra-field textarea{min-height:130px}
+        input::placeholder,textarea::placeholder{color:var(--gray-light)}
+        .bottom-section{margin-top:2rem;text-align:center}
+        .section-counter{font-family:var(--font-heading);color:var(--gray);font-size:1rem;margin-bottom:1.25rem}
+        .btn-generate{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 2.5rem;border:none;border-radius:100px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;font-family:var(--font-body);font-size:.95rem;font-weight:600;cursor:pointer;letter-spacing:.3px;transition:all .3s;box-shadow:0 4px 16px rgba(121,73,61,.3)}
+        .btn-generate:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(121,73,61,.4)}
+        .btn-generate:disabled{opacity:.5;cursor:not-allowed;transform:none}
+        .btn-generate .spinner{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+        .btn-generate.loading .spinner{display:block}.btn-generate.loading .btn-label{display:none}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        .result-area{display:none;margin-top:1.75rem;border-radius:var(--radius-md);text-align:center;overflow:hidden}
+        .result-area.visible{display:block}
+        .result-success{background:var(--white);border:1px solid var(--cream-dark);box-shadow:var(--shadow-md)}
+        .result-error{background:rgba(231,76,60,.04);border:1px solid rgba(231,76,60,.15)}
+        .result-header{padding:2rem 1.5rem 1.25rem;position:relative}
+        .result-header::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--primary),var(--gold))}
+        .result-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.5rem}
+        .result-success .result-icon{background:rgba(39,174,96,.1);color:#27ae60}
+        .result-error .result-icon{background:rgba(231,76,60,.1);color:#e74c3c}
+        .result-header h3{font-family:var(--font-display);font-size:1.4rem;color:var(--dark);margin-bottom:.25rem}
+        .result-header p{color:var(--gray);font-size:.88rem}
+        .result-file-card{margin:0 1.5rem;padding:1rem 1.25rem;background:var(--cream);border-radius:var(--radius-sm);display:flex;align-items:center;gap:1rem}
+        .result-file-icon{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+        .result-file-info{text-align:left;flex:1;min-width:0}
+        .result-file-name{font-weight:600;font-size:.9rem;color:var(--dark);word-break:break-all}
+        .result-file-meta{font-size:.75rem;color:var(--gray);margin-top:.1rem}
+        .result-actions{padding:1.25rem 1.5rem 1.75rem;display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+        .btn-download{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 2rem;border:none;border-radius:100px;font-family:var(--font-body);font-size:.9rem;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none}
+        .btn-download-primary{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff;box-shadow:0 4px 16px rgba(201,168,96,.3)}
+        .btn-download-primary:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(201,168,96,.4)}
+        .btn-download-secondary{background:transparent;border:1.5px solid var(--cream-dark);color:var(--gray)}
+        .btn-download-secondary:hover{border-color:var(--primary);color:var(--primary)}
+        .result-error .result-header{padding-bottom:1.5rem}
+        .template-bar{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-md);padding:1rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm);display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+        .template-bar label{font-family:var(--font-heading);font-size:1.05rem;font-weight:600;color:var(--dark);white-space:nowrap;display:flex;align-items:center;gap:.5rem}
+        .template-bar label i{color:var(--gold)}
+        .template-status{display:flex;align-items:center;gap:.5rem;font-size:.85rem;flex:1}
+        .template-status.has{color:#27ae60}.template-status.none{color:var(--gray)}
+        .template-actions{display:flex;gap:.5rem;flex-shrink:0}
+        .btn-tpl{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem 1rem;border-radius:100px;font-family:var(--font-body);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;border:1.5px solid}
+        .btn-tpl-upload{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border-color:transparent}
+        .btn-tpl-upload:hover{opacity:.88}
+        .btn-tpl-remove{background:transparent;color:#c0392b;border-color:rgba(192,57,43,.3)}
+        .btn-tpl-remove:hover{background:rgba(192,57,43,.06)}
+        .extra-section-bar{background:var(--white);border:1px solid var(--cream-dark);border-radius:var(--radius-md);padding:1rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow-sm);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+        .extra-section-title{display:flex;align-items:center;gap:.75rem}
+        .extra-section-title i{color:var(--gold)}
+        .extra-section-title strong{font-family:var(--font-heading);font-size:1.05rem;color:var(--dark);display:block}
+        .extra-section-title span{font-size:.78rem;color:var(--gray)}
+        .btn-add-section{display:inline-flex;align-items:center;gap:.45rem;padding:.58rem 1rem;border-radius:100px;border:1.5px solid var(--gold);background:rgba(201,168,96,.08);color:var(--primary);font-family:var(--font-body);font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s}
+        .btn-add-section:hover{background:var(--gold);color:#fff}
+        .custom-section-card{border-style:dashed}
+        .custom-section-card .section-header-left small{display:block;color:#999;font-size:.72rem;font-weight:400}
+        .custom-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1rem}
+        .custom-field label{display:block;font-size:.76rem;font-weight:700;color:var(--gray);margin-bottom:.35rem;text-transform:uppercase;letter-spacing:.3px}
+        .custom-field input[type="text"],.custom-field select{width:100%;padding:.7rem .9rem;border:1.5px solid var(--cream-dark);border-radius:var(--radius-sm);background:var(--white);color:var(--dark);font-family:var(--font-body);font-size:.88rem;transition:border-color .2s}
+        .custom-field input[type="text"]:focus,.custom-field select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(121,73,61,.08)}
+        .custom-actions{display:flex;justify-content:flex-end;margin-top:.85rem}
+        .btn-remove-custom{display:inline-flex;align-items:center;gap:.4rem;padding:.48rem .9rem;border:1.5px solid rgba(192,57,43,.25);border-radius:100px;background:transparent;color:#c0392b;font-family:var(--font-body);font-size:.78rem;font-weight:700;cursor:pointer}
+        .btn-remove-custom:hover{background:rgba(192,57,43,.06)}
+        .cover-drop{padding:1rem}
+        @media(max-width:768px){.page-header{padding:1rem}.header-title{font-size:1.1rem}.header-back span{display:none}.hero-banner{padding:3.5rem 1.5rem 3rem;min-height:200px}.hero-banner h1{font-size:1.9rem}.main-container{padding:1.25rem 1rem 3rem}.input-type-selector{flex-wrap:wrap}.type-btn{flex:1 1 calc(50% - .25rem)}.filename-section{flex-direction:column;align-items:stretch;gap:.75rem}.btn-clear-all{width:100%}.result-file-card{flex-direction:column;text-align:center}.result-file-info{text-align:center}.result-actions{flex-direction:column}.btn-download{justify-content:center}}
+        @media(max-width:768px){.mass-type-tabs{grid-template-columns:1fr}.liturgia-import{padding:1rem}.liturgia-import-description{margin-left:0}.liturgia-import-controls{align-items:stretch}.liturgia-date-input,.btn-import-liturgia{width:100%}.extra-section-bar{align-items:stretch}.btn-add-section{justify-content:center}.custom-grid{grid-template-columns:1fr}}
+        @media(max-width:480px){.hero-banner h1{font-size:1.5rem}.header-left img{height:34px}}
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-left">
+            <img src="assets/images/logoBranca.png" alt="Paróquia">
+            <div class="header-divider"></div>
+            <span class="header-title">PaZcom - Slides</span>
+        </div>
+        <a href="../index.html" class="header-back"><i class="fas fa-arrow-left"></i><span>Voltar ao site</span></a>
+    </header>
+    <section class="hero-banner">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-icon"><i class="fas fa-cross"></i></div>
+            <h1>Gerador de <span>Slides</span></h1>
+            <p>Crie apresentações litúrgicas a partir de arquivos, links ou texto</p>
+            <div class="hero-line"><span></span><i class="fas fa-circle"></i><span></span></div>
+        </div>
+    </section>
+    <main class="main-container">
+        <form id="liturgiaForm" enctype="multipart/form-data">
+            <input type="hidden" id="massType" name="mass_type" value="dominical">
+            <div class="mass-type-tabs" role="tablist" aria-label="Tipo de missa">
+                <button type="button" class="mass-type-btn selected" data-mass-type="dominical" onclick="selectMassType('dominical')">
+                    <i class="fas fa-church"></i> <span>Dominical</span>
+                </button>
+                <button type="button" class="mass-type-btn" data-mass-type="maos" onclick="selectMassType('maos')">
+                    <i class="fas fa-hand-holding-droplet"></i> <span>Mãos Ensanguentadas</span>
+                </button>
+                <button type="button" class="mass-type-btn" data-mass-type="jerico" onclick="selectMassType('jerico')">
+                    <i class="fas fa-shield-halved"></i> <span>Cerco de Jericó</span>
+                </button>
+            </div>
+            <section class="liturgia-import" aria-labelledby="liturgiaImportTitle">
+                <div class="liturgia-import-title" id="liturgiaImportTitle"><i class="fas fa-book-bible"></i> Liturgia do dia</div>
+                <p class="liturgia-import-description">Escolha a data da missa para preencher as leituras, o salmo e o Evangelho automaticamente.</p>
+                <div class="liturgia-import-controls">
+                    <label for="liturgiaDate" class="sr-only">Data da missa</label>
+                    <input type="date" id="liturgiaDate" class="liturgia-date-input" aria-describedby="liturgiaImportStatus">
+                    <button type="button" class="btn-import-liturgia" id="btnImportLiturgia" onclick="loadSelectedLiturgy()"><i class="fas fa-download"></i> Carregar liturgia</button>
+                </div>
+                <p class="liturgia-import-status" id="liturgiaImportStatus" role="status" aria-live="polite"></p>
+            </section>
+            <div class="template-bar">
+                <label><i class="fas fa-layer-group"></i> Slide molde</label>
+                <div class="template-status none" id="tplStatus"><i class="fas fa-circle-notch fa-spin"></i> Verificando...</div>
+                <div class="template-actions">
+                    <button type="button" class="btn-tpl btn-tpl-upload" id="btnTplUpload" onclick="document.getElementById('tplFileInput').click()">
+                        <i class="fas fa-upload"></i> <span id="btnTplLabel">Enviar molde</span>
+                    </button>
+                    <button type="button" class="btn-tpl btn-tpl-remove" id="btnTplRemove" style="display:none" onclick="removeTemplate()">
+                        <i class="fas fa-trash-alt"></i> Remover
+                    </button>
+                </div>
+                <input type="file" id="tplFileInput" accept=".pptx" style="display:none" onchange="uploadTemplate(this)">
+            </div>
+            <div class="filename-section">
+                <label><i class="fas fa-file-signature"></i> Nome do arquivo</label>
+                <div class="filename-input-wrap">
+                    <input type="text" id="customFilename" name="custom_filename" placeholder="Ex: missa_domingo_6TC" autocomplete="off">
+                    <div class="filename-ext">.pptx</div>
+                </div>
+                <button type="button" class="btn-clear-all" onclick="clearAllFields()"><i class="fas fa-eraser"></i> Limpar tudo</button>
+            </div>
+            <div class="extra-section-bar">
+                <div class="extra-section-title">
+                    <i class="fas fa-plus-circle"></i>
+                    <div>
+                        <strong>Seções extras</strong>
+                        <span>Adicione capas com foto e textos fora do modelo padrão</span>
+                    </div>
+                </div>
+                <button type="button" class="btn-add-section" onclick="addCustomSection()">
+                    <i class="fas fa-layer-group"></i> Adicionar seção
+                </button>
+            </div>
+            <div id="sectionsContainer"></div>
+            <div class="bottom-section">
+                <div class="section-counter" id="sectionCounter">Nenhuma seção preenchida</div>
+                <button type="submit" class="btn-generate" id="btnGenerate">
+                    <div class="spinner"></div>
+                    <span class="btn-label"><i class="fas fa-file-powerpoint"></i> Gerar Apresentação</span>
+                </button>
+                <div class="result-area" id="resultArea"></div>
+            </div>
+        </form>
+    </main>
+<script>
+const API_URL = 'api';
+// Todas as seções em ordem litúrgica — type: 'lyrics' ou 'rubric'
+const BASE_SECTIONS = [
+    { key:'cantico_entrada',    label:'Cântico de Entrada',        type:'lyrics' },
+    { key:'ato_penitencial',    label:'Ato Penitencial',           type:'lyrics' },
+    { key:'gloria',             label:'Glória',                    type:'lyrics' },
+    { key:'primeira_leitura',   label:'Primeira Leitura',          type:'rubric', placeholder:'Ex: Ex 17,3-7' },
+    { key:'salmo_responsorial', label:'Salmo Responsorial',        type:'lyrics', placeholder:'Cole aqui o refrão do salmo...' },
+    { key:'segunda_leitura',    label:'Segunda Leitura',           type:'rubric', placeholder:'Ex: Rm 5,1-2.5-8' },
+    { key:'aclamacao_evangelho',label:'Aclamação ao Evangelho',    type:'lyrics' },
+    { key:'evangelho',          label:'Evangelho',                 type:'rubric', placeholder:'Ex: Jo 4,5-42' },
+    { key:'preces_oracao_dizimista', label:'Preces - Oração do Dizimista', type:'simple_text', placeholder:'Ex: Senhor, atendei a nossa prece!', helper:'Resposta das preces' },
+    { key:'ofertorio',             label:'Ofertório',                    type:'lyrics' },
+    { key:'prefacio_eucaristico',  label:'Prefácio Eucarístico',         type:'lyrics' },
+    { key:'santo',                 label:'Santo',                        type:'lyrics' },
+    { key:'cordeiro',           label:'Cordeiro de Deus',          type:'lyrics' },
+    { key:'comunhao',           label:'Comunhão',                  type:'lyrics' },
+    { key:'pos_comunhao',       label:'Pós-Comunhão',              type:'lyrics' },
+    { key:'cantico_final',      label:'Cântico Final',             type:'lyrics' },
+    { key:'outro',              label:'Outro',                     type:'lyrics' },
+];
+
+const MAOS_SECTIONS = [
+    { key:'cantico_entrada',    label:'Cântico de Entrada',        type:'lyrics' },
+    { key:'aspercao',           label:'Asperção',                  type:'lyrics' },
+    { key:'ato_penitencial',    label:'Ato Penitencial',           type:'lyrics' },
+    { key:'gloria',             label:'Glória',                    type:'lyrics' },
+    { key:'primeira_leitura',   label:'Primeira Leitura',          type:'rubric', placeholder:'Ex: Ex 17,3-7' },
+    { key:'salmo_responsorial', label:'Salmo Responsorial',        type:'lyrics', placeholder:'Cole aqui o refrão do salmo...' },
+    { key:'segunda_leitura',    label:'Segunda Leitura',           type:'rubric', placeholder:'Ex: Rm 5,1-2.5-8' },
+    { key:'aclamacao_evangelho',label:'Aclamação ao Evangelho',     type:'lyrics' },
+    { key:'evangelho',          label:'Evangelho',                 type:'rubric', placeholder:'Ex: Jo 4,5-42' },
+    { key:'preces_oracao_dizimista', label:'Preces - Oração do Dizimista', type:'simple_text', placeholder:'Ex: Senhor, atendei a nossa prece!', helper:'Resposta das preces' },
+    { key:'ofertorio',          label:'Ofertório',                 type:'lyrics' },
+    { key:'prefacio_eucaristico', label:'Prefácio Eucarístico',    type:'lyrics' },
+    { key:'santo',              label:'Santo',                     type:'lyrics' },
+    { key:'cordeiro',           label:'Cordeiro de Deus',          type:'lyrics' },
+    { key:'comunhao',           label:'Comunhão',                  type:'lyrics' },
+    { key:'translado',          label:'Translado',                 type:'lyrics' },
+    { key:'pos_comunhao',       label:'Pós-Comunhão',              type:'lyrics' },
+    { key:'cantico_final',      label:'Cântico Final',             type:'lyrics' },
+    { key:'outro',              label:'Outro',                     type:'lyrics' },
+];
+
+const CERCO_SECTIONS = [
+    BASE_SECTIONS[0],
+    { key:'entrada_sao_miguel', label:'Entrada da Imagem de São Miguel', type:'lyrics', placeholder:'Cole ou digite o texto para a entrada da imagem de São Miguel...' },
+    ...BASE_SECTIONS.slice(1),
+];
+
+const MASS_TYPES = {
+    dominical: { label:'Dominical', templateLabel:'dominical', sections: BASE_SECTIONS },
+    maos: { label:'Mãos Ensanguentadas', templateLabel:'das Mãos Ensanguentadas', sections: MAOS_SECTIONS },
+    jerico: { label:'Cerco de Jericó', templateLabel:'do Cerco de Jericó', sections: CERCO_SECTIONS },
+};
+let currentMassType = 'dominical';
+let ALL_SECTIONS = MASS_TYPES[currentMassType].sections;
+let lastLiturgicalData = null;
+
+const DEFAULT_CORDEIRO_TEXT = `Cordeiro de Deus
+Que tirais o pecado do mundo
+Tende Piedade, Piedade de nós
+
+Cordeiro de Deus
+Que tirais o pecado do mundo
+Tende Piedade, Piedade de nós
+
+Cordeiro de Deus
+Que tirais o pecado do mundo
+Dai-nos a paz, a vossa paz`;
+
+const QUICK_FILL_TEXTS = {
+    cordeiro: { label:'Cordeiro padrão', icon:'fa-clipboard-check', text: DEFAULT_CORDEIRO_TEXT },
+};
+
+function quickFillMarkup(key) {
+    const preset = QUICK_FILL_TEXTS[key];
+    if (!preset) return '';
+    return `
+            <div class="quick-fill-row">
+                <button type="button" class="quick-fill-btn" onclick="applyQuickFill('${key}')">
+                    <i class="fas ${preset.icon}"></i> ${preset.label}
+                </button>
+            </div>`;
+}
+
+const READING_TEXT_KEYS = new Set(['primeira_leitura', 'segunda_leitura', 'evangelho']);
+const PSALM_SECTION_KEY = 'salmo_responsorial';
+
+function readingExtraMarkup(key) {
+    if (READING_TEXT_KEYS.has(key)) {
+        return `
+            <div class="reading-extra-field">
+                <label for="reading_text_${key}"><i class="fas fa-book-open"></i> Texto da leitura</label>
+                <textarea name="reading_text_${key}" id="reading_text_${key}" placeholder="Cole aqui o texto completo da leitura..." oninput="updateStatus('${key}')"></textarea>
+                <small>Esse texto entra depois do slide da rubrica.</small>
+            </div>`;
+    }
+    if (key === PSALM_SECTION_KEY) {
+        return `
+            <div class="reading-extra-field">
+                <label for="reading_text_${key}"><i class="fas fa-align-left"></i> Estrofes do salmo</label>
+                <textarea name="reading_text_${key}" id="reading_text_${key}" placeholder="Cole as estrofes do salmo. Separe cada estrofe por uma linha em branco, ou comece cada estrofe com -." oninput="updateStatus('${key}')"></textarea>
+                <small>O slide do refrão será repetido depois de cada estrofe.</small>
+            </div>`;
+    }
+    return '';
+}
+
+const container = document.getElementById('sectionsContainer');
+function renderSections() {
+    container.innerHTML = '';
+    ALL_SECTIONS = MASS_TYPES[currentMassType].sections;
+    let idx = 1;
+    ALL_SECTIONS.forEach(sec => {
+    const { key, label, type } = sec;
+    const num = idx++;
+    const card = document.createElement('div');
+    card.className = 'section-card';
+    card.id = `card-${key}`;
+    card.dataset.key = key;
+
+    if (type === 'rubric' || type === 'simple_text') {
+        card.innerHTML = `
+        <div class="section-header" onclick="toggleCard('${key}')">
+            <div class="section-header-left">
+                <div class="section-num">${num}</div>
+                <div>
+                    <h3>${label}</h3>
+                    <small style="color:#999;font-size:.72rem;font-weight:400">${sec.helper || 'Rúbrica da leitura'}</small>
+                </div>
+            </div>
+            <div class="section-header-right">
+                <span class="section-badge" id="badge-${key}">Preenchido</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+        </div>
+        <div class="section-body">
+            <input type="hidden" name="input_type_${key}" id="input_type_${key}" value="text">
+            <input type="text" name="text_${key}" id="text_${key}"
+                   placeholder="${sec.placeholder}"
+                   oninput="updateStatus('${key}')"
+                   style="width:100%;box-sizing:border-box;padding:.6rem .75rem;border:1px solid #ddd;border-radius:6px;font-size:.95rem;font-family:inherit">
+            ${readingExtraMarkup(key)}
+        </div>`;
+    } else {
+        card.innerHTML = `
+        <div class="section-header" onclick="toggleCard('${key}')">
+            <div class="section-header-left">
+                <div class="section-num">${num}</div>
+                <h3>${label}</h3>
+            </div>
+            <div class="section-header-right">
+                <span class="section-badge" id="badge-${key}">Preenchido</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+        </div>
+        <div class="section-body">
+            ${quickFillMarkup(key)}
+            <input type="hidden" name="input_type_${key}" id="input_type_${key}" value="text">
+            <textarea name="text_${key}" id="text_${key}" placeholder="${sec.placeholder || 'Cole ou digite a letra aqui...'}" oninput="updateStatus('${key}')"></textarea>
+            ${readingExtraMarkup(key)}
+        </div>`;
+    }
+        container.appendChild(card);
+    });
+    renumberSections();
+    updateCounter();
+}
+
+let customSectionCounter = 0;
+renderSections();
+
+const LITURGY_API_URL = 'https://liturgia.up.railway.app/v2/';
+const DRAFT_STORAGE_KEY = 'nspaz-slides-draft-v1';
+let filenameManuallyEdited = false;
+
+function localTodayValue() {
+    const now = new Date();
+    return new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+}
+
+function automaticFilename() {
+    const [year, month, day] = (document.getElementById('liturgiaDate').value || localTodayValue()).split('-');
+    const filenamePrefix = {
+        dominical: 'missa_dominical',
+        maos: 'maos_ensanguentadas',
+        jerico: 'cerco_jerico',
+    }[currentMassType] || 'liturgia';
+    return `${filenamePrefix}_${day}-${month}-${year}`;
+}
+
+function updateAutomaticFilename(force = false) {
+    if (filenameManuallyEdited && !force) return;
+    document.getElementById('customFilename').value = automaticFilename();
+}
+
+function saveDraft() {
+    try {
+        const fields = {};
+        document.querySelectorAll('#liturgiaForm input[type="text"], #liturgiaForm textarea, #liturgiaForm select').forEach(field => {
+            if (field.name) fields[field.name] = field.value;
+        });
+        localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify({
+            massType: currentMassType,
+            liturgyDate: document.getElementById('liturgiaDate').value,
+            filenameManuallyEdited,
+            fields,
+        }));
+    } catch (error) {
+        // O gerador continua funcionando caso o navegador bloqueie o armazenamento local.
+    }
+}
+
+function restoreDraft() {
+    let draft;
+    try {
+        draft = JSON.parse(localStorage.getItem(DRAFT_STORAGE_KEY) || 'null');
+    } catch (error) {
+        return;
+    }
+    if (!draft || typeof draft !== 'object') return;
+
+    if (MASS_TYPES[draft.massType]) {
+        currentMassType = draft.massType;
+        document.getElementById('massType').value = currentMassType;
+        document.querySelectorAll('.mass-type-btn').forEach(btn => {
+            btn.classList.toggle('selected', btn.dataset.massType === currentMassType);
+        });
+        renderSections();
+    }
+
+    if (draft.liturgyDate) document.getElementById('liturgiaDate').value = draft.liturgyDate;
+    const fields = draft.fields || {};
+    Object.entries(fields).forEach(([name, value]) => {
+        const field = document.getElementById('liturgiaForm').elements.namedItem(name);
+        if (field && typeof field.value !== 'undefined') field.value = value;
+    });
+    filenameManuallyEdited = Boolean(draft.filenameManuallyEdited);
+    if (!filenameManuallyEdited) updateAutomaticFilename(true);
+    document.querySelectorAll('.section-card:not(.custom-section-card)').forEach(card => updateStatus(card.dataset.key));
+}
+
+function clearAllFields() {
+    if (!confirm('Limpar todos os textos deste rascunho?')) return;
+    try { localStorage.removeItem(DRAFT_STORAGE_KEY); } catch (error) {}
+    lastLiturgicalData = null;
+    filenameManuallyEdited = false;
+    customSectionCounter = 0;
+    currentMassType = 'dominical';
+    document.getElementById('massType').value = currentMassType;
+    document.querySelectorAll('.mass-type-btn').forEach(btn => {
+        btn.classList.toggle('selected', btn.dataset.massType === currentMassType);
+    });
+    renderSections();
+    document.getElementById('liturgiaDate').value = localTodayValue();
+    updateAutomaticFilename(true);
+    document.getElementById('resultArea').className = 'result-area';
+    setLiturgiaImportStatus('Rascunho limpo.');
+    checkTemplate();
+}
+
+function setLiturgiaImportStatus(message = '', type = '') {
+    const status = document.getElementById('liturgiaImportStatus');
+    status.textContent = message;
+    status.className = `liturgia-import-status ${type}`.trim();
+}
+
+function formatLiturgyDate(dateValue) {
+    const [year, month, day] = dateValue.split('-').map(Number);
+    return new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(new Date(year, month - 1, day));
+}
+
+// A API traz os números de versículo junto do texto, por exemplo "25“Vós".
+// Eles não devem aparecer nos slides, mas a referência bíblica continua intacta.
+function removeVerseNumbers(text) {
+    return (text || '')
+        .replace(/(?<![\p{L}\p{N}_])\d{1,3}(?=[\p{L}“"'\[])/gu, '')
+        .replace(/[ \t]+\n/g, '\n')
+        .trim();
+}
+
+function setImportedField(id, value) {
+    const field = document.getElementById(id);
+    if (field) field.value = value || '';
+}
+
+function setImportedLiturgySection(key, reference, text) {
+    setImportedField(`text_${key}`, reference || '');
+    setImportedField(`reading_text_${key}`, removeVerseNumbers(text));
+    updateStatus(key);
+}
+
+function applyLiturgicalData(data) {
+    const readings = data.leituras || {};
+    const first = readings.primeiraLeitura?.[0];
+    const psalm = readings.salmo?.[0];
+    const second = readings.segundaLeitura?.[0];
+    const gospel = readings.evangelho?.[0];
+
+    if (!first || !psalm || !gospel) {
+        throw new Error('A liturgia dessa data veio incompleta. Tente outra data.');
+    }
+
+    setImportedLiturgySection('primeira_leitura', first.referencia, first.texto);
+    setImportedField('input_type_salmo_responsorial', 'text');
+    setImportedField('text_salmo_responsorial', psalm.refrao || psalm.referencia || '');
+    setImportedField('reading_text_salmo_responsorial', removeVerseNumbers(psalm.texto));
+    updateStatus('salmo_responsorial');
+    setImportedLiturgySection('segunda_leitura', second?.referencia || '', second?.texto || '');
+    setImportedLiturgySection('evangelho', gospel.referencia, gospel.texto);
+}
+
+async function loadSelectedLiturgy() {
+    const dateField = document.getElementById('liturgiaDate');
+    const button = document.getElementById('btnImportLiturgia');
+    const dateValue = dateField.value;
+    if (!dateValue) {
+        setLiturgiaImportStatus('Escolha a data da missa.', 'error');
+        return;
+    }
+
+    const [year, month, day] = dateValue.split('-').map(Number);
+    button.disabled = true;
+    setLiturgiaImportStatus('Carregando a liturgia...');
+
+    try {
+        const response = await fetch(`${LITURGY_API_URL}?dia=${day}&mes=${month}&ano=${year}`);
+        if (!response.ok) throw new Error('Não foi possível consultar a liturgia.');
+        const data = await response.json();
+        applyLiturgicalData(data);
+        lastLiturgicalData = data;
+        setLiturgiaImportStatus(`Liturgia de ${formatLiturgyDate(dateValue)} carregada: ${data.liturgia || 'leituras preenchidas'}. Os números de versículo foram removidos.`, 'success');
+        saveDraft();
+    } catch (error) {
+        setLiturgiaImportStatus(error.message || 'Não foi possível carregar a liturgia para essa data.', 'error');
+    } finally {
+        button.disabled = false;
+    }
+}
+
+function initializeLiturgyDate() {
+    const dateField = document.getElementById('liturgiaDate');
+    dateField.value = localTodayValue();
+    dateField.addEventListener('change', () => {
+        updateAutomaticFilename();
+        saveDraft();
+        loadSelectedLiturgy();
+    });
+}
+
+initializeLiturgyDate();
+document.getElementById('customFilename').addEventListener('input', () => {
+    filenameManuallyEdited = true;
+    saveDraft();
+});
+updateAutomaticFilename(true);
+restoreDraft();
+document.getElementById('liturgiaForm').addEventListener('input', saveDraft);
+
+function selectedTemplateQuery() {
+    return '&mass_type=' + encodeURIComponent(currentMassType);
+}
+
+function selectMassType(type) {
+    if (!MASS_TYPES[type] || type === currentMassType) return;
+    currentMassType = type;
+    document.getElementById('massType').value = type;
+    document.querySelectorAll('.mass-type-btn').forEach(btn => {
+        btn.classList.toggle('selected', btn.dataset.massType === type);
+    });
+    document.getElementById('resultArea').className = 'result-area';
+    renderSections();
+    if (lastLiturgicalData) applyLiturgicalData(lastLiturgicalData);
+    updateAutomaticFilename();
+    saveDraft();
+    checkTemplate();
+}
+
+function positionOptions(selected = 'outro') {
+    return ALL_SECTIONS.map(sec => `<option value="${sec.key}" ${sec.key === selected ? 'selected' : ''}>Depois de ${sec.label}</option>`).join('');
+}
+
+function addCustomSection() {
+    const id = `custom_${++customSectionCounter}`;
+    const card = document.createElement('div');
+    card.className = 'section-card custom-section-card open';
+    card.id = `card-${id}`;
+    card.dataset.key = id;
+    card.dataset.custom = 'true';
+    card.innerHTML = `
+        <div class="section-header" onclick="toggleCard('${id}')">
+            <div class="section-header-left">
+                <div class="section-num">0</div>
+                <div>
+                    <h3 id="custom-title-preview-${id}">Nova seção</h3>
+                    <small>Seção extra com capa própria</small>
+                </div>
+            </div>
+            <div class="section-header-right">
+                <span class="section-badge" id="badge-${id}">Preenchido</span>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+        </div>
+        <div class="section-body">
+            <input type="hidden" name="custom_section_ids[]" value="${id}">
+            <div class="custom-grid">
+                <div class="custom-field">
+                    <label>Nome da seção</label>
+                    <input type="text" name="custom_section_title_${id}" id="custom_section_title_${id}" placeholder="Ex: Ladainha de Todos os Santos" oninput="updateCustomStatus('${id}')">
+                </div>
+                <div class="custom-field">
+                    <label>Posição</label>
+                    <select name="custom_section_after_${id}" id="custom_section_after_${id}" onchange="moveCustomSection('${id}'); updateCustomStatus('${id}')">
+                        ${positionOptions()}
+                    </select>
+                </div>
+            </div>
+            <div class="custom-field">
+                <label>Capa da seção</label>
+                <div class="file-drop cover-drop" id="cover-drop-${id}">
+                    <input type="file" name="custom_section_cover_${id}" id="custom_section_cover_${id}" accept=".jpg,.jpeg,.png,image/jpeg,image/png" onchange="handleCustomCover('${id}',this)">
+                    <div class="drop-icon"><i class="fas fa-image"></i></div>
+                    <p>Arraste ou clique para enviar a foto da capa</p>
+                    <div class="formats">.jpg · .jpeg · .png</div>
+                </div>
+                <div class="file-name-display" id="custom-cover-name-${id}">
+                    <i class="fas fa-image"></i>
+                    <span id="custom-cover-name-text-${id}"></span>
+                    <span class="remove-file" onclick="removeCustomCover('${id}')"><i class="fas fa-times"></i></span>
+                </div>
+            </div>
+            <div class="custom-field" style="margin-top:1rem">
+                <label>Texto da seção</label>
+                <textarea name="custom_section_text_${id}" id="custom_section_text_${id}" placeholder="Cole ou digite o texto desta seção..." oninput="updateCustomStatus('${id}')"></textarea>
+            </div>
+            <div class="custom-actions">
+                <button type="button" class="btn-remove-custom" onclick="removeCustomSection('${id}')">
+                    <i class="fas fa-trash-alt"></i> Remover seção
+                </button>
+            </div>
+        </div>`;
+
+    const drop = card.querySelector('.file-drop');
+    drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('dragover'); });
+    drop.addEventListener('dragleave', () => drop.classList.remove('dragover'));
+    drop.addEventListener('drop', e => {
+        e.preventDefault();
+        drop.classList.remove('dragover');
+        const input = drop.querySelector('input[type="file"]');
+        input.files = e.dataTransfer.files;
+        handleCustomCover(id, input);
+    });
+
+    insertCustomCard(card, 'outro');
+    renumberSections();
+    updateCounter();
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function insertCustomCard(card, afterKey) {
+    let anchor = document.getElementById(`card-${afterKey}`) || container.lastElementChild;
+    document.querySelectorAll('.custom-section-card').forEach(other => {
+        if (other === card) return;
+        const select = other.querySelector('[id^="custom_section_after_"]');
+        if (select && select.value === afterKey) anchor = other;
+    });
+    anchor.insertAdjacentElement('afterend', card);
+}
+
+function moveCustomSection(id) {
+    const card = document.getElementById(`card-${id}`);
+    const afterKey = document.getElementById(`custom_section_after_${id}`).value;
+    insertCustomCard(card, afterKey);
+    renumberSections();
+}
+
+function handleCustomCover(id, input) {
+    if (input.files && input.files[0]) {
+        document.getElementById(`custom-cover-name-text-${id}`).textContent = input.files[0].name;
+        document.getElementById(`custom-cover-name-${id}`).classList.add('visible');
+    }
+    updateCustomStatus(id);
+}
+
+function removeCustomCover(id) {
+    document.getElementById(`custom_section_cover_${id}`).value = '';
+    document.getElementById(`custom-cover-name-${id}`).classList.remove('visible');
+    updateCustomStatus(id);
+}
+
+function removeCustomSection(id) {
+    const card = document.getElementById(`card-${id}`);
+    if (card) card.remove();
+    renumberSections();
+    updateCounter();
+}
+
+function updateCustomStatus(id) {
+    const title = document.getElementById(`custom_section_title_${id}`).value.trim();
+    const text = document.getElementById(`custom_section_text_${id}`).value.trim();
+    const cover = document.getElementById(`custom_section_cover_${id}`).files.length > 0;
+    document.getElementById(`custom-title-preview-${id}`).textContent = title || 'Nova seção';
+    const filled = title !== '' && text !== '' && cover;
+    document.getElementById(`badge-${id}`).classList.toggle('visible', filled);
+    document.getElementById(`card-${id}`).classList.toggle('active', filled);
+    updateCounter();
+}
+
+function customSectionHasAnyValue(card) {
+    const id = card.dataset.key;
+    const title = document.getElementById(`custom_section_title_${id}`).value.trim();
+    const text = document.getElementById(`custom_section_text_${id}`).value.trim();
+    const cover = document.getElementById(`custom_section_cover_${id}`).files.length > 0;
+    return title !== '' || text !== '' || cover;
+}
+
+function renumberSections() {
+    document.querySelectorAll('.section-card .section-num').forEach((el, i) => { el.textContent = i + 1; });
+}
+
+function toggleCard(k) { document.getElementById(`card-${k}`).classList.toggle('open'); }
+function applyQuickFill(k) {
+    const preset = QUICK_FILL_TEXTS[k];
+    if (!preset) return;
+    const textarea = document.getElementById(`text_${k}`);
+    textarea.value = preset.text;
+    textarea.dispatchEvent(new Event('input', { bubbles: true }));
+    textarea.focus();
+}
+function updateStatus(k) {
+    let f = document.getElementById(`text_${k}`).value.trim() !== '';
+    const reading = document.getElementById(`reading_text_${k}`);
+    if (reading && reading.value.trim() !== '') f = true;
+    document.getElementById(`badge-${k}`).classList.toggle('visible', f);
+    document.getElementById(`card-${k}`).classList.toggle('active', f);
+    updateCounter();
+}
+function updateCounter() {
+    const n = document.querySelectorAll('.section-card.active').length;
+    document.getElementById('sectionCounter').textContent = n === 0 ? 'Nenhuma seção preenchida' : `${n} seção(ões) preenchida(s)`;
+}
+
+// ===== SUBMIT =====
+document.getElementById('liturgiaForm').addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = document.getElementById('btnGenerate');
+    const result = document.getElementById('resultArea');
+    const filled = document.querySelectorAll('.section-card.active').length;
+    const incompleteCustom = Array.from(document.querySelectorAll('.custom-section-card')).find(card => customSectionHasAnyValue(card) && !card.classList.contains('active'));
+
+    if (incompleteCustom) {
+        showResult(result, false, 'Seção extra incompleta', 'Preencha nome, posição, capa e texto da seção extra antes de gerar.');
+        incompleteCustom.classList.add('open');
+        incompleteCustom.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+    }
+    if (filled === 0) {
+        showResult(result, false, 'Nenhuma seção preenchida', 'Preencha pelo menos uma seção antes de gerar.');
+        return;
+    }
+
+    btn.classList.add('loading'); btn.disabled = true;
+    result.className = 'result-area';
+
+    try {
+        const formData = new FormData(e.target);
+        const response = await fetch(API_URL + '?action=generate', { method: 'POST', body: formData });
+        const text = await response.text();
+
+        let data;
+        try { data = JSON.parse(text); } catch(e) { throw new Error('Resposta inválida do servidor'); }
+
+        if (data.success) {
+            // O arquivo foi salvo na pasta output/ com o nome que o usuário digitou
+            const filename = data.filename; // Ex: "missa_domingo_6TC.pptx"
+            const downloadUrl = API_URL + '?action=download&file=' + encodeURIComponent(filename);
+
+            result.className = 'result-area visible';
+            result.innerHTML = `
+                <div class="result-success">
+                    <div class="result-header">
+                        <div class="result-icon"><i class="fas fa-check"></i></div>
+                        <h3>Apresentação Gerada!</h3>
+                        <p>${data.sections_count} seção(ões) processada(s) com sucesso</p>
+                    </div>
+                    <div class="result-file-card">
+                        <div class="result-file-icon"><i class="fas fa-file-powerpoint"></i></div>
+                        <div class="result-file-info">
+                            <div class="result-file-name">${filename}</div>
+                            <div class="result-file-meta">PowerPoint · Fundo preto · Arial Black 72pt</div>
+                        </div>
+                    </div>
+                    <div class="result-actions">
+                        <a href="${downloadUrl}" class="btn-download btn-download-primary" id="downloadLink" download="${filename}">
+                            <i class="fas fa-download"></i> Baixar Apresentação
+                        </a>
+                        <button type="button" class="btn-download btn-download-secondary" onclick="window.location.reload()">
+                            <i class="fas fa-redo"></i> Gerar Outra
+                        </button>
+                    </div>
+                </div>`;
+
+            result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Auto-download: baixa automaticamente para a pasta Downloads do navegador
+            setTimeout(() => {
+                document.getElementById('downloadLink').click();
+            }, 600);
+
+        } else {
+            showResult(result, false, 'Erro ao gerar', data.error || 'Erro desconhecido');
+        }
+    } catch (err) {
+        showResult(result, false, 'Erro', err.message);
+    } finally {
+        btn.classList.remove('loading'); btn.disabled = false;
+    }
+});
+
+// ===== TEMPLATE =====
+async function checkTemplate() {
+    const massType = currentMassType;
+    try {
+        const r = await fetch(API_URL + '?action=has_template&mass_type=' + encodeURIComponent(massType));
+        const d = await r.json();
+        if (massType === currentMassType) setTemplateUI(d);
+    } catch(e) { if (massType === currentMassType) setTemplateUI({ exists:false }); }
+}
+function setTemplateUI(info) {
+    const exists = typeof info === 'boolean' ? info : !!info.exists;
+    const uploaded = typeof info === 'object' ? info.uploaded !== false : exists;
+    const source = typeof info === 'object' ? info.source : '';
+    const label = MASS_TYPES[currentMassType].templateLabel;
+    const status = document.getElementById('tplStatus');
+    const btnRemove = document.getElementById('btnTplRemove');
+    const btnLabel = document.getElementById('btnTplLabel');
+    if (exists) {
+        status.className = 'template-status has';
+        status.innerHTML = source === 'bundled'
+            ? `<i class="fas fa-check-circle"></i> Molde ${label} pronto`
+            : `<i class="fas fa-check-circle"></i> Molde ${label} carregado`;
+        btnLabel.textContent = 'Substituir';
+        btnRemove.style.display = uploaded ? '' : 'none';
+    } else {
+        status.className = 'template-status none';
+        status.innerHTML = `<i class="fas fa-info-circle"></i> Sem molde ${label} — slides gerados com fundo preto padrão`;
+        btnLabel.textContent = 'Enviar molde';
+        btnRemove.style.display = 'none';
+    }
+}
+async function uploadTemplate(input) {
+    if (!input.files || !input.files[0]) return;
+    const status = document.getElementById('tplStatus');
+    status.className = 'template-status none';
+    status.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Enviando...';
+    const fd = new FormData();
+    fd.append('template', input.files[0]);
+    try {
+        const r = await fetch(API_URL + '?action=upload_template' + selectedTemplateQuery(), { method: 'POST', body: fd });
+        const raw = await r.text();
+        let d;
+        try { d = JSON.parse(raw); } catch(e) { status.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Resposta inválida do servidor (' + r.status + '): ' + (raw || r.statusText).substring(0,200); input.value=''; return; }
+        if (d.success) { checkTemplate(); }
+        else { status.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + (d.error || 'Falha desconhecida'); }
+    } catch(e) { status.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erro de rede: ' + e.message; }
+    input.value = '';
+}
+async function removeTemplate() {
+    const label = MASS_TYPES[currentMassType].templateLabel;
+    if (!confirm(`Remover o slide molde ${label}?`)) return;
+    await fetch(API_URL + '?action=delete_template' + selectedTemplateQuery());
+    checkTemplate();
+}
+checkTemplate();
+
+function showResult(el, success, title, msg) {
+    el.className = 'result-area visible';
+    el.innerHTML = `
+        <div class="result-error">
+            <div class="result-header">
+                <div class="result-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <h3>${title}</h3>
+                <p>${msg}</p>
+            </div>
+        </div>`;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+</body>
+</html>

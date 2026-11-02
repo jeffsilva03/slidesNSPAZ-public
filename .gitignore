@@ -1,0 +1,19 @@
+# Apresentações, arquivos temporários e prévias locais
+*.pptx
+/output/
+/uploads/
+/.codex-build/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Segredos e ambiente local
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+*.log
+.DS_Store
+Thumbs.db

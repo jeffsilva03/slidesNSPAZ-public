@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="Slides NSPAZ — Apresentações litúrgicas a partir de textos">
+ <defs><linearGradient id="glow"><stop stop-color="#136ED6"/><stop offset="1" stop-color="#5DB7FF"/></linearGradient><clipPath id="typing"><rect x="674" y="150" width="0" height="32"><animate attributeName="width" values="0;370;370;0" keyTimes="0;0.5;0.9;1" dur="8s" repeatCount="indefinite"/></rect></clipPath></defs>
+ <rect width="1200" height="340" rx="20" fill="#0B1426"/>
+ <g font-family="Segoe UI,Arial,sans-serif"><text x="56" y="65" fill="#9DBCE8" font-size="13" letter-spacing="3">JEFFERSON SILVA / PYTHON / AUTOMAÇÃO</text>
+ <text x="53" y="151" fill="#E8F1FD" font-size="58" font-weight="700">Slides NSPAZ</text>
+ <text x="56" y="194" fill="#9DBCE8" font-size="18">Apresentações litúrgicas a partir de textos</text>
+ <rect x="56" y="234" width="300" height="34" rx="17" fill="#101F38" stroke="#2379E8"/>
+ <circle cx="77" cy="251" r="5" fill="#2379E8"><animate attributeName="opacity" values="1;.3;1" dur="2s" repeatCount="indefinite"/></circle>
+ <text x="94" y="256" fill="#E8F1FD" font-size="13">FLASK · TEXTO · MODELOS · PPTX</text>
+ <rect x="640" y="91" width="505" height="185" rx="12" fill="#101F38" stroke="#2379E8" stroke-opacity=".45"/>
+ <circle cx="665" cy="113" r="4" fill="#EF6C75"/><circle cx="681" cy="113" r="4" fill="#E8BE62"/><circle cx="697" cy="113" r="4" fill="#63C997"/>
+ <g font-family="Consolas,monospace" font-size="17"><text x="674" y="173" fill="#E8F1FD" clip-path="url(#typing)">$ python app.py</text>
+ <text x="674" y="213" fill="#2379E8">POST /api?action=generate</text><text x="674" y="245" fill="#9DBCE8">PPTX pronto para download</text></g></g>
+ <rect x="56" y="313" width="1089" height="3" rx="1.5" fill="url(#glow)"><animate attributeName="opacity" values=".4;1;.4" dur="3s" repeatCount="indefinite"/></rect></svg>
